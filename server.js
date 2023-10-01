@@ -10,18 +10,21 @@ const friendInvitationRoutes = require("./routes/friendInvitationRoutes");
 const PORT = process.env.PORT || process.env.API_PORT;
 
 const allowedOrigins = ["https://vacservice.onrender.com"];
-
 const corsOptions = {
-  origin: (origin, callback) => {
-    if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
-      callback(null, true);
-    } else {
-      callback(new Error("Not allowed by CORS"));
-    }
-  },
-  credentials: true,
-  optionsSuccessStatus: 200,
+  origin: 'https://vacservice.onrender.com',
+  optionsSuccessStatus: 200 
 };
+// const corsOptions = {
+//   origin: (origin, callback) => {
+//     if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+//       callback(null, true);
+//     } else {
+//       callback(new Error("Not allowed by CORS"));
+//     }
+//   },
+//   credentials: true,
+//   optionsSuccessStatus: 200,
+// };
 const app = express();
 app.use(express.json());
 app.use(cors(corsOptions));

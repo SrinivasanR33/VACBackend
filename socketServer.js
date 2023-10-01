@@ -14,7 +14,7 @@ const serverStore = require("./serverStore");
 const registerSocketServer = (server) => {
   const io = require("socket.io")(server, {
     cors: {
-      origin: "*",
+      origin: "https://vacservice.onrender.com",
       methods: ["GET", "POST"],
     },
   });
